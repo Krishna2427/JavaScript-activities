@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     /*
+        const users = {
+            name:'krishna',
+            age :24
+        }
+        for(let a of users){
+            console.log(a);// error
+        } 
+         const arr = [2,3,4,5];
+         for(let a in arr){
+            console.log(a);
+         } */
+
+         const users = {
+            name:'krishna',
+            age :24,
+        }
+        Object.defineProperty(users, 'email', {
+            value: "krishna@gmail.com",
+            enumerable: false
+        });
+        for(let a in users){
+            console.log(a);
+        }
+        console.log(users.email);
+
+        let counter = 1;
+        switch(counter){
+            case 0:
+            let name;
+            break;
+
+            case 1:
+          //  let name;
+            break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

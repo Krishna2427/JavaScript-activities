@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            margin: 0;
+          }
+          
+          span {
+            display: block;
+          }
+          .canvas {
+            margin: 100px auto 100px;
+            width: 80%;
+            text-align: center;
+          }
+          
+          .button {
+            width: 100px;
+            height: 100px;
+            border: solid black 2px;
+            display: inline-block;
+          }
+          
+          #grey {
+            background: grey;
+          }
+          #blue {
+            background: blue;
+          }
+          #pink{
+            background-color: pink;
+          }
+          #hellow {
+            background: yellow;
+          }
+          #maroon{
+            background-color: maroon;
+          }
+    </style>
+</head>
+<body>
+    <h3>Color Changes solving Problems</h3>
+    <span class="button" id="gray">gray</span>
+    <span class="button" id="blue">blue</span>
+    <span class="button" id="pink">pink</span>
+    <span class="button" id="hellow">hellow</span>
+    <span class="button" id="maroon">maroon</span>
+    <script>
+        const buttons = document.querySelectorAll('.button');
+        const body    = document.querySelector('body');
+        buttons.forEach(function(button){
+            console.log(button);
+            button.addEventListener('click', function(e){
+                if(e.target.id ==='gray'){
+                    body.style.backgroundColor ='gray';
+                }else if(e.target.id ==='blue'){
+                    body.style.backgroundColor ='blue';
+                }else if(e.target.id === 'pink'){
+                    body.style.backgroundColor ='pink';
+                }else if(e.target.id === 'hellow'){
+                    body.style.backgroundColor ='yellow';
+                }else if(e.target.id === 'maroon'){
+                    body.style.backgroundColor ='maroon';
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

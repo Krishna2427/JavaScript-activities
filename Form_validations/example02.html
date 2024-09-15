@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var form = document.getElementById('myForm');
+            var enteredDate = document.querySelector('input[name="dob"]');
+            var ageInput = document.querySelector('input[name="age"]');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log(e);
+            });
+
+            enteredDate.addEventListener('input', () => {
+                calculateAge();
+            });
+
+            function calculateAge() {
+                var dob = new Date(enteredDate.value);
+                var today = new Date();
+                var age = today.getFullYear() - dob.getFullYear();
+                var monthDifference = today.getMonth() - dob.getMonth();
+                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < dob.getDate())) {
+                    age--;
+                }
+                ageInput.value = age;
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        <label for="dob"> Date Of Birth</label>
+        <input type="date" name="dob" placeholder="Enter your DOB">
+        <label for="age">Age</label>
+        <input type="number" name="age" placeholder="Enter your Age" readonly>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

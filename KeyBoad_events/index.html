@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Events on Element</title>
+    <style>
+        #scrollable {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            border: 1px solid black;
+        }
+        .content {
+            height: 1000px; /* Make the content taller than the container */
+        }
+    </style>
+</head>
+<body>
+    <div id="scrollable">
+        <div class="content">Scroll me!</div>
+    </div>
+
+    <script>
+        const scrollableDiv = document.getElementById('scrollable');
+
+        scrollableDiv.addEventListener('scroll', function() {
+            console.log('Scroll position:', scrollableDiv.scrollTop);
+        });
+    </script>
+</body>
+</html>

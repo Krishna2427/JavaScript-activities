@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Using JavaScript Symbol()</h2>
+    <p id="demo"></p>
+   
+    <script>
+        const person ={
+            firstname :'John',
+            lastName :"Deo",
+            age      : 50,
+            eyeColor :"blue",
+        }
+        let id = Symbol('id');
+        person[id] = 123456;
+        document.getElementById('demo').innerHTML = person[id]+ " "+ person.id;
+
+
+        console.log()
+        const sym1 = Symbol();
+        const sym2 = Symbol();
+       // console.log(sym1 === sym2);
+
+        const sym3 = Symbol('description');
+        const obj = {
+            [sym3]:'value'
+        };
+
+        console.log(obj[sym3]);
+    </script>
+</body>
+</html>

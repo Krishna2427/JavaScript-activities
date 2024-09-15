@@ -1,0 +1,11 @@
+@media (max-width: 576px) {
+    /* Custom styles for screens smaller than 576px */
+    #search-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

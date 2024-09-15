@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [2, 3, 4, 5, 6, 7, 8]
+        let arr12 = [9, 10, 11, 12];
+        let arr3 = arr + arr12;
+        console.log(arr3); // returns the string format 
+
+        // by using spred opeartor in array.
+        let arr4 = [...arr, ...arr12];
+        console.log(arr4);
+
+
+        // object
+        let obj = { a: 1, b: 2, c: 3 };
+        let obj2 = { a: 2, b: 3, c: 4 };
+        let obj3 = { ...obj, ...obj2 };
+        console.log(obj3);
+
+        function sum() {
+            let total = 0;
+            for (let a of arguments) {
+                total += a;
+            }
+            return total;
+        }
+        let arr0 = [9, 10, 11, 12];
+        console.log(sum(123));
+        console.log(sum(...arr0));
+
+        function add(x, y, z) {
+            return x + y + z;
+        }
+        const numbers = [1, 2, 3];
+        console.log(add(...numbers));
+
+        const obj1   = { a: 1, b: 2 };
+        const obj6 = { b: 3, c: 4,d:5, };
+        const obj7 = { b: 3, c: 4 };
+        const mergedObject = { ...obj1, ...obj6,...obj7 };
+
+        console.log(mergedObject);
+
+
+        const array = [2, 3, 4];
+        const newArray = [1, ...array, 5];
+        console.log(newArray);
+
+        function multiply(...numbers){
+            return numbers.reduce((acc, num)=> acc * num)
+        }
+        const result = multiply(...[1,2,3,4,5,6])
+        console.log(result)
+
+        function palindrome() {
+            const str = 'amma';
+            const rev_chars = [...str].reverse().join('');
+            if (str === rev_chars) {
+                console.log(str +" "+"is palindrome");
+            } else {
+                console.log(str +"is not palindrome");
+            }
+        }  
+        palindrome();  
+      
+        function sumall(...numbers){
+             let sum = 0;
+             for(let num of numbers){
+                 sum += num;
+             }
+             return sum;
+            }
+        console.log(sumall(1,2,3));
+       //console.log(sumall({a:2,b:3,c:10}))
+
+       function concatenateStrings(...strings){
+         return  strings.join(' ');
+       }
+       console.log(concatenateStrings('hello','word'));
+
+       console.log(concatenateStrings('javscript',"is","fun"));
+
+       function introduce(firstname,...othernames){
+              console.log('first Name:'+ firstname);
+              console.log('othernames:'+ othernames);
+       }
+       introduce("john","krishna","revathi","sailu");
+       introduce('sathwik')
+
+       function max_value(...numbers){
+              let max = numbers[0];
+              for(let num of numbers){
+                if(num > max){
+                    max = num;
+                }
+              }
+              return max;
+       }
+    console.log(max_value(1,2,3,4,5))
+    console.log(max_value(1,2,90,4,99))
+    </script>
+</head>
+<body>
+</body>
+
+</html>

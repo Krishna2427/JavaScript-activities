@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const myPromise = 0;
+        function testPromise(){
+            const thisPromiseCount = ++myPromise;
+            const log = document.getElementById('logo');
+            log.insertAdjacentHTML("beforeend",`${thisPromiseCount} Started<br>`);
+
+            const p1 = new Promise((resovle, reject)=>{
+                log.insertAdjacentHTML("beforeend",`${thisPromiseCount} Promise constructor<br>`)
+            });
+        }
+    </script>
+</head>
+<body>
+    <button id="make-Promise">Make a promise</button>
+    <div id="logo"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function debounce(func, wait){
+            let timeOut;
+            return function(...args){
+                clearTimeout(timeOut);
+                timeOut = setTimeout(()=>func.apply(this. args), wait);
+            };
+        }
+        window.addEventListener('scroll', debounce(function(){
+            console.log('sroll position', window.scrollY);
+        }, 200))
+    </script>
+</body>
+</html>

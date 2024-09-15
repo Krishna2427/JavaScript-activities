@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+header{
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    width: 100%;
+}
+header li a{
+    color: black;
+}
+.card{
+    margin-top: 100px;
+    width: 300px;
+    height: 250px;
+}
+.card:hover{
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: rgb(147, 61, 61);
+    border: 2px solid black;
+}
+footer{
+    background-color: black;
+    height: 400px;
+}
+ li a{
+   text-decoration: none;
+}

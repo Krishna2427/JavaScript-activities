@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Student Storage</title>
+  <script src="./test1.js" defer></script>
+</head>
+<body>
+  <h1>Student Information</h1>
+  <form id="studentForm">
+    <input type="text" id="studentName" placeholder="Enter Student Name" required />
+    <input type="number" id="studentAge" placeholder="Enter Student Age" required />
+    <button type="submit">Save Student</button>
+  </form>
+
+  <h2>Saved Student Data</h2>
+  <p id="displayData">No student data stored yet.</p>
+
+  <button onclick="clearStudentData()">Clear Student Data</button>
+</body>
+</html>

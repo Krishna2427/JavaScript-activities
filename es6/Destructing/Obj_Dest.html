@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const person = {
+            name : 'Krishna',
+            age  :24,
+            city :"new york",
+        };
+        const {name,age,city, surname='lankapally'} = person;
+        console.log(surname);
+        // renamming
+        const {name : Name, age: Age}= person;
+        console.log(Name);
+        console.log(name);
+
+        // nested Objects destructuring;
+           const student = {
+            name :'krishna',
+            address:{
+                house_No:1_84,
+                vill_name :'ramavaram',
+            }
+           }
+           const {name1, address:{house_No,vill_name}} = student;
+           console.log()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

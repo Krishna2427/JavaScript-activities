@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-secondary togglebutton">Toggle Theme</button>
+                <button class="btn btn-success prioritysortbutton">Sort by Priority</button>
+                <button class="btn btn-info datesortbutton">Sort by Date</button>
+                <button class="btn btn-danger" id="deleteAllTasks">Delete All Tasks</button>
+                <button class="btn btn-warning exportbutton">Export Tasks</button>
+                <button class="btn btn-primary importbutton">Import Tasks</button>
+            </div>
+        </div>
+
+        <!-- Task Input Form -->
+        <form id="taskForm" class="mb-4">
+            <div class="mb-3">
+                <input type="text" id="taskInput" class="form-control" placeholder="Task Name">
+            </div>
+            <div class="mb-3">
+                <select id="priorityInput" class="form-control">
+                    <option value="">Select Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input type="datetime-local" id="dateInput" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+
+        <!-- Task Search -->
+        <div class="row mb-4">
+            <div class="col">
+                <input type="text" class="form-control searchinput" placeholder="Search Tasks">
+                <button class="btn btn-outline-secondary searchbutton mt-2">Search</button>
+            </div>
+        </div>
+
+        <!-- Task Rows -->
+        <div id="tasksrow" class="row"></div>
+    </div>
+
+    <!-- Modals for Editing Tasks and Subtasks -->
+    <div class="modal fade" id="edittaskmodal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editTaskForm">
+                        <div class="mb-3">
+                            <input type="text" id="edittaskinput" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <select id="editpriorityinput" class="form-control">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="datetime-local" id="editdateinput" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Subtask Modal -->
+    <div class="modal fade" id="addsubtaskmodal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Subtask</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addsubtaskform">
+                        <div class="mb-3">
+                            <input type="text" id="subtaskinput" class="form-control" placeholder="Subtask Name">
+                        </div>
+                        <div class="mb-3">
+                            <select id="subtaskpriorityinput" class="form-control">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="datetime-local" id="subtaskdatetimeinput" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Subtask</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Subtask Modal -->
+    <div class="modal fade" id="editsubtasksmodal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Subtask</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editSubtaskForm">
+                        <div class="mb-3">
+                            <input type="text" id="editSubtaskInput" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <select id="editSubtaskPriorityInput" class="form-control">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="datetime-local" id="editSubtaskDateTimeInput" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Subtask Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Your JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

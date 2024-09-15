@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./test2.js" defer></script>
+</head>
+<body>
+    <div>
+        <form id="myForm">
+            Student Name: <input type="text" name="studentName" id="student-name">
+            Student Age: <input type="number" name="studentAge" id="student-age">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <h3>Student Data</h3>
+    <h3 id="displayData">No student data stored yet</h3>
+    <!-- 'Clear' button will call the global ClearContent function -->
+    <button onclick="ClearContent()">Clear</button>
+</body>
+</html>

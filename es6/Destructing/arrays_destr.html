@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1,2,3,4];
+        const [a,b,c] = arr;
+        console.log(a,b,c);
+
+        const[first,,third] = arr;
+        console.log(first,third);
+
+        // default values
+        const deFault_Values = [1,2];
+        const [k,l,m=3] = deFault_Values;
+        console.log(k,l,m);
+        //swaping variables;
+        //------------------
+        let x = 10;
+        let y = 20;
+        [x,y] = [y,x];
+        console.log(x)
+        console.log(y);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

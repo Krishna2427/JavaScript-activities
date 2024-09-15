@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Storage Example</title>
+    <script src="./test3.js" defer></script>
+</head>
+<body>
+    <h1>Employee Management</h1>
+    <!-- Form for entering employee data -->
+    <form id="employeeForm">
+        Employee Name: <input type="text" id="employeeName" required><br>
+        Employee Age: <input type="number" id="employeeAge" required><br>
+        Employee Department: <input type="text" id="employeeDept" required><br>
+        <button type="submit">Save Employee</button>
+    </form>
+
+    <h2>Stored Employee Data</h2>
+    <!-- Display area for employee data -->
+    <ul id="employeeList">No employee data stored yet.</ul>
+
+    <button id="clearButton">Clear All Employee Data</button>
+</body>
+</html>

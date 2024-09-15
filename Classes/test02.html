@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       class ValidationError extends Error{
+           printCustemerMessage(){
+                return `Validation faile :-((datailes: ${this.message}))`
+            }
+       }
+       try{
+        throw new ValidationError("Not a valid phone number");
+       }catch(error){
+           if(error instanceof ValidationError){
+            console.log(error.name);
+            console.log(error.printCustemerMessage());
+           }else{
+            console.log("Unknown error",error);
+            throw error;
+           }
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

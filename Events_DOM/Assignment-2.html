@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var form = document.getElementById('myForm');
+            var error_content = document.getElementById('error-content');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                findingPalindrome();
+            });
+            
+            function findingPalindrome() {
+                var input = document.getElementById('username').value;
+                var reversed = input.split('').reverse().join('');
+                
+                if (input === reversed) {
+                    console.log(`${input} is a palindrome`);
+                    error_content.textContent = `${input} is a palindrome`;
+                } else {
+                    console.log(`${input} is not a palindrome`);
+                    error_content.textContent = `${input} is not a palindrome`;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5 w-25">
+        <form class="form-group" id="myForm">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter Your User Name">
+            <button type="submit" class="btn btn-warning mt-2">Submit</button>
+        </form>
+        <div id="error-content"></div>
+    </div>
+</body>
+</html>
